@@ -19,7 +19,7 @@ export default class volunteerShiftCalLWC extends LightningElement {
   fullCalendarJsInitialised = 0;
   @api limitvalue = '200';
   @api jobIDS = null;
-  @api linktarget = null;
+  @api linkTarget = null;
 
 
   //No need for a wire, as we are only accessing the data on initilize calendar at this stage.  
@@ -77,13 +77,12 @@ export default class volunteerShiftCalLWC extends LightningElement {
     
     //Load the data imperatively, at the time of calendar laod.
     //To do make function to reload internally. 
-    GetAllShifts({limitor: this.limitvalue} )
+    GetAllShifts({limitor: this.limitvalue, jobIDS: this.jobIDS} )
             .then(result => {
                 this.shift1 = result;
                 this.shift1.forEach(element => {
                   if (element.GW_Volunteers__Number_of_Volunteers_Still_Needed__c ==null) {
                     dataObj.title = element.GW_Volunteers__Volunteer_Job__r.Name;
-
                   }
                   else if (element.GW_Volunteers__Number_of_Volunteers_Still_Needed__c ===0) {
                     dataObj.title = element.GW_Volunteers__Volunteer_Job__r.Name + ' Full';
@@ -94,10 +93,17 @@ export default class volunteerShiftCalLWC extends LightningElement {
                     dataObj.description =  element.GW_Volunteers__Number_of_Volunteers_Still_Needed__c + ' Avaliable';
 
                   } 
+
                   //set backgroundColor
                   dataObj.sfid = element.Id;
                   dataObj.start = element.GW_Volunteers__Start_Date_Time__c;
-                  dataObj.url = '/' + element.Id;
+                  if (this.linkTarget == null ) {
+                    dataObj.url = '/' + element.Id;
+                  }
+                  else {
+                      dataObj.url = this.linkTarget;
+                  }
+                  
                   events.push(dataObj);
                   dataObj = {};
                 });

@@ -1,3 +1,3 @@
-<aura:application>
-    <aura:dependency resource="VolunteerShiftCalLWC"/>
+<aura:application access="GLOBAL" extends="ltng:outApp" implements="ltng:allowGuestAccess">
+        <aura:dependency resource="VolunteerShiftCalLWC"/>
 </aura:application>	
