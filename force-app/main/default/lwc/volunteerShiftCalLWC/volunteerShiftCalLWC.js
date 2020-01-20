@@ -20,7 +20,8 @@ export default class volunteerShiftCalLWC extends LightningElement {
   @api limitvalue = '200';
   @api jobIDS = null;
   @api linkTarget = null;
-
+  @api recordId;
+  @api useRecordIDForJobID = false;
 
   //No need for a wire, as we are only accessing the data on initilize calendar at this stage.  
   //@wire (GetAllShifts,{limitor: "$limitvalue"}) shifts;
@@ -74,10 +75,16 @@ export default class volunteerShiftCalLWC extends LightningElement {
     const ele = this.template.querySelector('div.fullcalendarjs');
     let dataObj = {};
     let events = [];
-    
+    let jobIDSlocal = '';
     //Load the data imperatively, at the time of calendar laod.
     //To do make function to reload internally. 
-    GetAllShifts({limitor: this.limitvalue, jobIDS: this.jobIDS} )
+    if (this.useRecordIDForJobID === true) {
+        jobIDSlocal = this.recordId;
+    }
+    else {
+        jobIDSlocal = this.jobIDS;
+    }
+    GetAllShifts({limitor: this.limitvalue, jobIDS: jobIDSlocal} )
             .then(result => {
                 this.shift1 = result;
                 this.shift1.forEach(element => {

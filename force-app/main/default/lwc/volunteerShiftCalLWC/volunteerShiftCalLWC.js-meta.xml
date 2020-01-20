@@ -11,10 +11,17 @@
 
     </targets>
     <targetConfigs >
-        <targetConfig targets="lightning__RecordPage,lightning__AppPage,lightning__HomePage">
+        <targetConfig targets="lightning__AppPage,lightning__HomePage">
             <property name="labelName" type="String" label="label" placeholder="Shift Calendar" description="Set Page Title."/>
             <property name="jobIDS" type="String" label="Job ID's to show" placeholder="" description="Set the Job id's to show delimited with a coma."/>
             <property name="linkTarget" type="String" label="Where should it go on click" placeholder="" description="Leave blank for record page."/>
+
+        </targetConfig>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="labelName" type="String" label="label" placeholder="Shift Calendar" description="Set Page Title."/>
+            <property name="useRecordIDForJobID" type="Boolean" label="use Record ID For Job ID"  description="Only tick on Volunteer job records" />
+            <property name="linkTarget" type="String" label="Where should it go on click" placeholder="" description="Leave blank for record page."/>
+            <property name="jobIDS" type="String" label="Job ID's to show" placeholder="" description="Set the Job id's to show delimited with a coma."/>
 
         </targetConfig>
     </targetConfigs>
