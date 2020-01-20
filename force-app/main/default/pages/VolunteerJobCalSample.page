@@ -1,0 +1,21 @@
+<!--  Sample page showing how to use the web calendar app on a public web page, or elsewhere.  
+    Note the need to create the aura wrapper app, and then the calendar.  --> 
+<apex:page sidebar="false" showHeader="false" showQuickActionVfHeader="false">
+    <apex:includeLightning />
+    <div id="lightning" />
+	<script>
+		$Lightning.use("c:VolunteerShiftCalAura", function() {
+        	 $Lightning.createComponent("c:volunteerShiftCalLWC", {
+                 labelName: "Web Shift Calendar Sample edit me",
+                 limitvalue: "50"
+                 
+                 },
+              "lightning",
+              function(cmp) {
+                console.log("LWC component was created");
+                // do some stuff
+              }
+          );
+        });
+    </script>
+</apex:page>
