@@ -4,11 +4,11 @@
         <componentInstances>
             <componentInstanceProperties>
                 <name>jobIDS</name>
-                <value>a1K0I00000VNEqNUAX,a1K0I00000VNZ2FUAX</value>
+                <value></value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>linkTarget</name>
-                <value>https://google.com</value>
+                <value></value>
             </componentInstanceProperties>
             <componentName>volunteerShiftCalLWC</componentName>
         </componentInstances>
