@@ -87,13 +87,18 @@ export default class volunteerShiftCalLWC extends LightningElement {
     GetAllShifts({limitor: this.limitvalue, jobIDS: jobIDSlocal} )
             .then(result => {
                 this.shift1 = result;
+                console.log('El' + this.shift1[0].GW_Volunteers__Volunteer_Job__r.Colour__c );
+
                 this.shift1.forEach(element => {
+
                   if (element.GW_Volunteers__Number_of_Volunteers_Still_Needed__c ==null) {
                     dataObj.title = element.GW_Volunteers__Volunteer_Job__r.Name;
                   }
                   else if (element.GW_Volunteers__Number_of_Volunteers_Still_Needed__c ===0) {
                     dataObj.title = element.GW_Volunteers__Volunteer_Job__r.Name + ' Full';
                     dataObj.description = 'Full';
+                    
+
                   }
                   else {
                     dataObj.title = element.GW_Volunteers__Volunteer_Job__r.Name;
@@ -102,6 +107,8 @@ export default class volunteerShiftCalLWC extends LightningElement {
                   } 
 
                   //set backgroundColor
+
+                  dataObj.BackgroundColor  = element.GW_Volunteers__Volunteer_Job__r.Colour__c;
                   dataObj.sfid = element.Id;
                   dataObj.start = element.GW_Volunteers__Start_Date_Time__c;
                   if (this.linkTarget == null ) {

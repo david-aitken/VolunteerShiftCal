@@ -11,7 +11,7 @@ public with sharing class VolunteerShiftCal {
             limitor = 100;
         }
         string sql = 'SELECT Id, Name, GW_Volunteers__Start_Date_Time__c,GW_Volunteers__Number_of_Volunteers_Still_Needed__c, ';
-        sql += ' GW_Volunteers__Volunteer_Job__c, GW_Volunteers__Volunteer_Job__r.Name';
+        sql += ' GW_Volunteers__Volunteer_Job__c, GW_Volunteers__Volunteer_Job__r.Name, GW_Volunteers__Volunteer_Job__r.colour__c ';
         sql += ' FROM GW_Volunteers__Volunteer_Shift__c';
 //Filter to show only previous n days and beyond.
         sql+= ' WHERE GW_Volunteers__Start_Date_Time__c >= LAST_N_DAYS:30 ';
@@ -24,12 +24,5 @@ public with sharing class VolunteerShiftCal {
         sql+= ' LIMIT ' + limitor;
         system.debug(sql);
         return Database.query (sql);
-        /*Ireturn [
-            SELECT Id, Name, GW_Volunteers__Start_Date_Time__c,GW_Volunteers__Number_of_Volunteers_Still_Needed__c,	GW_Volunteers__Volunteer_Job__c,GW_Volunteers__Volunteer_Job__r.Name
-            FROM GW_Volunteers__Volunteer_Shift__c
-            LIMIT :limitor
-        ];*/
-
-
     } 
 }
