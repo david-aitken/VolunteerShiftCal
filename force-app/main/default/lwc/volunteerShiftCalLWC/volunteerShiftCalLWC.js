@@ -22,6 +22,8 @@ export default class volunteerShiftCalLWC extends LightningElement {
   @api linkTarget = null;
   @api recordId;
   @api useRecordIDForJobID = false;
+  @api calendarViews = 'month,basicWeek,basicDay,list30Days';
+  @api defaultView = 'month';
 
   //No need for a wire, as we are only accessing the data on initilize calendar at this stage.  
   //@wire (GetAllShifts,{limitor: "$limitvalue"}) shifts;
@@ -125,9 +127,18 @@ export default class volunteerShiftCalLWC extends LightningElement {
                 header: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'month,basicWeek,basicDay'
+                    right: this.calendarViews
                 },
+                views: {
+                  list30Days: {
+                    type: 'listMonth',
+                    duration: { days: 31 },
+                    buttonText: 'list'
+                  }},
+
                 defaultDate: new Date(), // default day is today
+
+                defaultView: this.defaultView,
                 navLinks: true, // can click day/week names to navigate views
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events

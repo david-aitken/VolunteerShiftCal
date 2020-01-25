@@ -15,6 +15,8 @@
             <property name="labelName" type="String" label="label" placeholder="Shift Calendar" description="Set Page Title."/>
             <property name="jobIDS" type="String" label="Job ID's to show" placeholder="" description="Set the Job id's to show delimited with a coma."/>
             <property name="linkTarget" type="String" label="Where should it go on click" placeholder="" description="Leave blank for record page."/>
+            <property name="calendarViews" type="String" label="Which Calendar Views to show" placeholder="month,basicWeek,basicDay,list30Days" description="Options are month,basicWeek,basicDay,list30Days."/>
+            <property name="defaultView" type="String" label="Which Calendar Views to show by default" placeholder="month or basicWeek or basicDay or list30Days" description="Options are month,basicWeek,basicDay,list30Days."/>
 
         </targetConfig>
         <targetConfig targets="lightning__RecordPage">
@@ -22,6 +24,8 @@
             <property name="useRecordIDForJobID" type="Boolean" label="use Record ID For Job ID"  description="Only tick on Volunteer job records" />
             <property name="linkTarget" type="String" label="Where should it go on click" placeholder="" description="Leave blank for record page."/>
             <property name="jobIDS" type="String" label="Job ID's to show" placeholder="" description="Set the Job id's to show delimited with a coma."/>
+            <property name="calendarViews" type="String" label="Which Calendar View's to show" placeholder="month,basicWeek,basicDay,list30Days" description="Options are month,basicWeek,basicDay,list30Days."/>
+            <property name="defaultView" type="String" label="Which Calendar Views to show by default" placeholder="month or basicWeek or basicDay or list30Days" description="Options are month,basicWeek,basicDay,list30Days."/>
 
         </targetConfig>
     </targetConfigs>
