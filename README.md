@@ -10,10 +10,14 @@ and https://medium.com/@jaredpogi/updating-salesforce-object-with-data-coming-fr
 - FullCalendarJS
 
 ## Description of Files and Directories
-1. lwc/fullCalendarJs` - FullCalendarJS Lightning Web Component
-2. taticresources/FullCalendarJS` - JS and CSS files.
-3. Class Get Volunteer  
-## Issues
-- I'm not sure if LWC has a way to use `loadStyle()` with the `print` attribute similar to `<link>` tags. This is used to indicate that a separate CSS can be loaded for print or print preview.
+# LWC volunteerShiftCalLWC - LWC implementation of fullcalendar v3
+# VolunterShiftCal - APEX Controller
+# VolunteerSHiftCalAura - Aura wrapper for visualforce compatability
+# Volunteer Job Record Page - Sample Lightning Record Page
+# Volunteer Shift Cal Single Page- sample One Page App
+# VolunteerJobCalSample - Sample visual force page.
 
+## Contributors 
+# David Aitken - Initial Author
+# Trusha Shah - Tester 
 
