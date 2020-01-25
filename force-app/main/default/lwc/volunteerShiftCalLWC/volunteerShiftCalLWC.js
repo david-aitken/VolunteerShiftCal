@@ -105,10 +105,8 @@ export default class volunteerShiftCalLWC extends LightningElement {
                     dataObj.description =  element.GW_Volunteers__Number_of_Volunteers_Still_Needed__c + ' Avaliable';
 
                   } 
-
-                  //set backgroundColor
-
-                  dataObj.BackgroundColor  = element.GW_Volunteers__Volunteer_Job__r.Colour__c;
+                  
+                  dataObj.color  = element.GW_Volunteers__Volunteer_Job__r.Colour__c;
                   dataObj.sfid = element.Id;
                   dataObj.start = element.GW_Volunteers__Start_Date_Time__c;
                   if (this.linkTarget == null ) {
