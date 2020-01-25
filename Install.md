@@ -4,9 +4,9 @@ Install Volunteers 4 Salesforce here:
 https://install.salesforce.org/products/v4s/3.116/install
 
 Install package here:
-https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0I000000jE5W
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0I000000jE5v
 or 
-https://test.salesforce.com/packaging/installPackage.apexp?p0=04t0I000000jE5W
+https://test.salesforce.com/packaging/installPackage.apexp?p0=04t0I000000jE5v
 
 Create Sample Campaign
 Create Sample Volunteer Job and link to samples Campaign
