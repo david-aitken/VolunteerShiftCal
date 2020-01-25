@@ -87,7 +87,7 @@ export default class volunteerShiftCalLWC extends LightningElement {
     GetAllShifts({limitor: this.limitvalue, jobIDS: jobIDSlocal} )
             .then(result => {
                 this.shift1 = result;
-                console.log('El' + this.shift1[0].GW_Volunteers__Volunteer_Job__r.Colour__c );
+                //console.log('El' + this.shift1[0].GW_Volunteers__Volunteer_Job__r.Colour__c );
 
                 this.shift1.forEach(element => {
 
